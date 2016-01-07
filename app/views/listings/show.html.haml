@@ -1,0 +1,8 @@
+%p
+  %strong Title:
+  = @listing.title
+%p
+  %strong Text:
+  = @listing.text
+
+= link_to 'Edit', edit_listing_path(@listing)
