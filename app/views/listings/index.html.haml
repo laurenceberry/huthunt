@@ -1,5 +1,14 @@
-= link_to 'New listing', new_listing_path
+%section.intro.padded
+  .browse
+    = link_to 'Browse', root_path(anchor: "listings"), :class => 'smoothScroll button'
+  .list
+    = link_to 'New listing', new_listing_path, :class => 'button'
 
-- @listings.each do |listing|
-  %h3=listing.title
-  %p=listing.text
+%section
+  %ul.listings#listings
+    - @listings.each do |listing|
+      %a.listing{:href => listing_path(listing)}
+        %li
+          %h3=listing.title
+          %p=listing.text
+
